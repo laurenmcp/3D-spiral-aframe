@@ -15,14 +15,16 @@ AFRAME.registerComponent('start', {
     }
 });
 
-/*experimenting with accessing gltf components*/
-AFRAME.registerComponent('gltf-model', {
+/*experimenting with accessing gltf components https://aframe.io/docs/1.3.0/introduction/models.html#modifying-materials*/
+AFRAME.registerComponent('modify-materials', {
     init: function () {
-        this.el.addEventListener('model-loaded', () => {   
-          const block = this.el.getObject3D('mesh');
-          block.traverse(node => {
-              node.material.pbrMetallicRoughness.baseColorFactor.set('red');
-          });
+        this.el.addEventListener('model-loaded', () => {
+        const obj = this.el.getObject3D('mesh');
+        console.log("got mesh");
+        obj.traverse(node => {
+            node.material.set(10);
+          
         });
-      }
-  });
+      });
+    }
+});
