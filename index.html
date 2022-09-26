@@ -17,10 +17,11 @@
         <a-camera position="0, 10, -5" zoom=".5"></a-camera>
         <a-entity light="type: ambient; color: #FFB507" animation="property: light.color; from:rgb(220,105,0); to:rgb(235,140,0); dur: 1500; loop:true; easings: easeInOutSine; dir: alternate; autoplay: true"></a-entity>
         <a-entity light="type: point; intensity: 1; distance: 50; decay: 2" position="-5 20, -10" castShadow="true"></a-entity>
-        <a-entity gltf-model="#trapezoid" position="0 7.5 -10" rotation= "0 75 0" scale="1 1 1"></a-entity>
-        <a-entity gltf-model="#trapezoid" position="-2.0 5.5 -9.6" rotation= "0 125 0" scale=".95 .95 .95"></a-entity>
-        <a-entity gltf-model="#trapezoid" position="-2.5 3.5 -7.5" rotation= "0 180 0" scale=".9 .9 .9"></a-entity>
-    
+        <a-entity rotation = "0 0 0" animation="property: position; to: '0 360 0'; easing: linear; repeat: indefinite; loop: true; duration: 15000">
+            <a-entity gltf-model="#trapezoid" position="0 7.5 -10" rotation= "0 75 0" scale="1 1 1"></a-entity>
+            <a-entity gltf-model="#trapezoid" position="-2.0 5.5 -9.6" rotation= "0 125 0" scale=".95 .95 .95"></a-entity>
+            <a-entity gltf-model="#trapezoid" position="-2.5 3.5 -7.5" rotation= "0 180 0" scale=".9 .9 .9"></a-entity>
+        </a-entity>
     </a-scene>
 </body>
 </html>
